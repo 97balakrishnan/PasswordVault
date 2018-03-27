@@ -36,8 +36,8 @@ public class MainActivity extends ActionBarActivity {
 
         final Cursor cursor = dbHelper.getAllPersons();
         String [] columns = new String[] {
-                ExampleDBHelper.PERSON_COLUMN_ID,
-                ExampleDBHelper.PERSON_COLUMN_NAME
+                ExampleDBHelper.VAULT_COLUMN_ID,
+                ExampleDBHelper.VAULT_COLUMN_TITLE
         };
         int [] widgets = new int[] {
                 R.id.personID,
@@ -54,7 +54,7 @@ public class MainActivity extends ActionBarActivity {
             public void onItemClick(AdapterView<?> listView, View view,
                                     int position, long id) {
                 Cursor itemCursor = (Cursor) MainActivity.this.listView.getItemAtPosition(position);
-                int personID = itemCursor.getInt(itemCursor.getColumnIndex(ExampleDBHelper.PERSON_COLUMN_ID));
+                int personID = itemCursor.getInt(itemCursor.getColumnIndex(ExampleDBHelper.VAULT_COLUMN_ID));
                 Intent intent = new Intent(getApplicationContext(), CreateOrEditActivity.class);
                 intent.putExtra(KEY_EXTRA_CONTACT_ID, personID);
                 startActivity(intent);

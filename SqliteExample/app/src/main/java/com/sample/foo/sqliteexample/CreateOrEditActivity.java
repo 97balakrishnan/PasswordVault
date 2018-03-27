@@ -59,8 +59,8 @@ public class CreateOrEditActivity extends ActionBarActivity implements View.OnCl
 
             Cursor rs = dbHelper.getPerson(personID);
             rs.moveToFirst();
-            String personName = rs.getString(rs.getColumnIndex(ExampleDBHelper.PERSON_COLUMN_NAME));
-            String personGender = rs.getString(rs.getColumnIndex(ExampleDBHelper.PERSON_COLUMN_GENDER));
+            String personName = rs.getString(rs.getColumnIndex(ExampleDBHelper.VAULT_COLUMN_TITLE));
+            String personGender = rs.getString(rs.getColumnIndex(ExampleDBHelper.VAULT_COLUMN_PASSWORD));
             //int personAge = rs.getInt(rs.getColumnIndex(ExampleDBHelper.PERSON_COLUMN_AGE));
             if (!rs.isClosed()) {
                 rs.close();
@@ -154,8 +154,7 @@ public class CreateOrEditActivity extends ActionBarActivity implements View.OnCl
         }
         else {
             if(dbHelper.insertPerson(nameEditText.getText().toString(),
-                    genderEditText.getText().toString(),
-                    0)) {
+                    genderEditText.getText().toString())) {
                 Toast.makeText(getApplicationContext(), " Inserted", Toast.LENGTH_SHORT).show();
             }
             else{
