@@ -7,13 +7,22 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.sample.foo.sqliteexample.MainActivity">
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password records"
+        android:textColor="#000"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        android:id="@+id/heading"/>
     <ListView
         android:id="@+id/listView1"
+        android:layout_below="@id/heading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:paddingTop="10dp"
         android:layout_above="@+id/addNew">
     </ListView>
 
